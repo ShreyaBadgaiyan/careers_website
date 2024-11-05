@@ -35,12 +35,14 @@ JOBS=[
 ]
 
 @app.route("/")
+def home_page():
+     return render_template('index.html',jobs=JOBS,company_name='Jovian')
+
+@app.route("/profile")
 def hello_world():
     return "Hello Shreya Badgaiyan!"
 
-@app.route("/profile")
-def show_profile():
-     return render_template('index.html',jobs=JOBS,company_name='Jovian')
+
 
 @app.route("/api/jobs")
 def list_jobs():
